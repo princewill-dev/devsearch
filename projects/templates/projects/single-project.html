@@ -12,29 +12,23 @@
           <h3 class="singleProject__subtitle">Tools & Stacks</h3>
           <div class="singleProject__toolStack">
 
-            {% for tag in project.tags.all %}
-
-                <span class="tag tag--pill tag--sub tag--lg">
-                  <small>{{tag}}</small>
-                </span>
-
+            {% for tag in project.tags.all %} 
+            <span class="tag tag--pill tag--sub tag--lg">
+              <small>{{tag}}</small>
+            </span>
             {% endfor %}
+            
 
           </div>
-
-          {% if project.source_link%}
-
-          <a class="singleProject__liveLink" href="#" target="_blank"><i class="im im-external-link"></i>Source Code</a>
-
+          {% if project.source_link %}
+          <a class="singleProject__liveLink" href="#" target="_blank"><i class="im im-external-link"></i>Source Code
+          </a>
           {% endif %}
 
-
-          {% if project.source_link%}
-
-          <a class="singleProject__liveLink" href="#" target="_blank"><i class="im im-external-link"></i>Live Demo</a>
-
+          {% if project.demo_link %}
+          <a class="singleProject__liveLink" href="#" target="_blank"><i class="im im-external-link"></i>live demo
+          </a>
           {% endif %}
-
         </div>
         <div class="column column--2of3">
           <img class="singleProject__preview" src="{{ project.featured_image.url }}" alt="portfolio thumbnail" />
@@ -94,6 +88,4 @@
     </div>
     </div>
   </main>
-
-
 {% endblock %}
